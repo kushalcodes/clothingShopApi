@@ -3,7 +3,7 @@ var uploadedFileName = "";
 // SET STORAGE
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploadedImages/')
+        cb(null, 'uploadedItemImages/')
     },
     filename: function (req, file, cb) {
         const filename = file.originalname;
