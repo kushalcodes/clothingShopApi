@@ -1,5 +1,7 @@
+//not in use
+//use migration instead
+//just for backup code
 const knex = require("./knexFile");
-
 knex
     .schema
     .hasTable('users')

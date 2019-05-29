@@ -1,4 +1,6 @@
-const knex = require("./knexFile");
+const Knex = require("knex");
+const knexOptions = require("./knexFile");
+const knex = Knex(knexOptions);
 
 //users handlers
 function getUser(req,res){
@@ -6,18 +8,18 @@ function getUser(req,res){
     .select()
     .table('users')
     .then((data)=>{
-        res.send(data)
-        res.end()
+        res.json(data)
     })
 }
 
 function addUser(req,res){
     var values = {
-        userFname: req.query.userFname,
-        userLname: req.query.userLname,
-        username: req.query.username,
-        password: req.query.password
+        userFname: req.body.userFname,
+        userLname: req.body.userLname,
+        username: req.body.username,
+        password: req.body.password
     };
+    console.log(req);
     knex('users')
     .insert(values)
     .then(
@@ -34,8 +36,7 @@ function getItems(req,res){
     .select()
     .table('items')
     .then((data)=>{
-        res.send(data)
-        res.end()
+        res.json(data)
     })
 }
 
@@ -73,7 +74,7 @@ function addItem(req,res){
 }
 
 function deleteItem(req,res){
-    var id = req.query.id;
+    var id = req.body.id;
     knex('items')
     .where({ id: id })
     .del()
@@ -86,12 +87,12 @@ function deleteItem(req,res){
 
 function updateItem(req,res){
     var updateValues = {
-        itemName: req.query.itemName,
-        itemPrice: req.query.itemPrice,
-        itemImageName: req.query.itemImageName,
-        itemDescription: req.query.itemDescription
+        itemName: req.body.itemName,
+        itemPrice: req.body.itemPrice,
+        itemImageName: req.body.itemImageName,
+        itemDescription: req.body.itemDescription
     },
-    id = req.query.id;
+    id = req.body.id;
 
     knex('items')
     .where({ id: id })
