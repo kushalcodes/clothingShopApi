@@ -15,11 +15,11 @@
 
 ## Quick Codes
 
-** start server **
-- npm start
+**start server**
+> npm start
 
-** make migration file **
-- npm run migrate:make "filename"
+**make migration file**
+> npm run migrate:make "filename"
 
-** run migration file **
-- npm run migrate:run  
+**run migration file**
+> npm run migrate:run  
