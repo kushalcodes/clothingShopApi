@@ -1,6 +1,10 @@
 # For Assignment 4 / OnlineClothingShop through REST API
 
 ## Notes:
+
+- databaseName:
+> clothingShopApi
+
 - folder "uploadedItemImages" is where the item images will be uploaded ( see multerFileUpload.js:6 )
 
 - On posting users, following names are required to pass user information:
