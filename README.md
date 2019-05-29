@@ -2,7 +2,7 @@
 
 ## Notes:
 
-- databaseName:
+**databaseName:**
 > clothingShopApi
 
 - folder "uploadedItemImages" is where the item images will be uploaded ( see multerFileUpload.js:6 )
