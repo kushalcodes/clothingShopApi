@@ -10,6 +10,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//before starting server code
+//lets create some required folders for this api
+const dir = require("./makeRequiredDirs")
+dir.makeRequiredDirs("uploadedItemImages")
+
 //user api
 app.get("/api/users",handlers.getUser)
 app.post("/api/users",handlers.addUser)
