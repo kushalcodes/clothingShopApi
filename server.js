@@ -15,8 +15,11 @@ app.use(bodyParser.json())
 const dir = require("./makeRequiredDirs")
 dir.makeRequiredDirs("uploadedItemImages")
 
+app.use('/static', Express.static('uploadedItemImages'))
+
 //user api
 app.get("/api/users",handlers.getUser)
+app.get("/api/users/:username",handlers.getSingleUser)
 app.post("/api/users",handlers.addUser)
 
 //item api

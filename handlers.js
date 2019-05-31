@@ -12,6 +12,17 @@ function getUser(req,res){
     })
 }
 
+function getSingleUser(req,res){
+    knex
+    .select()
+    .table('users')
+    .where({ username: req.params.username })
+    .then((data)=>{
+        res.json(data)
+        console.log(data);
+    })
+}
+
 function addUser(req,res){
     var values = {
         userFname: req.body.userFname,
@@ -108,6 +119,7 @@ function updateItem(req,res){
 
 module.exports = {
     getUser : getUser,
+    getSingleUser : getSingleUser,
     addUser : addUser,
     getItems : getItems,
     addItem : addItem,
