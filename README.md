@@ -6,6 +6,7 @@
 > clothingShopApi
 
 - folder "uploadedItemImages" is where the item images will be uploaded ( see multerFileUpload.js:6 )
+- folder "uploadedItemImages" is created if not exists on running server
 
 - On posting users, following names are required to pass user information:
     ```
